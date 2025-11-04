@@ -12,31 +12,26 @@ function PokemonDisplay({ pokemon, isLoading, gameState }: Props) {
 
   const showAnswer = gameState !== GameState.Playing;
   const image = pokemon?.image;
-  const name = pokemon?.name;
-
-  console.log(name)
 
   return (
-    <div className="card">
-      <div className="card-header">
-        <h1 className="text-center"> {showAnswer ? name?.toUpperCase() : "Quien es ese Pokemon?"}</h1>
-      </div>
-      <div className="card-body">
+    <div className="relative flex flex-col items-center justify-center bg-gray-800 bg-opacity-50 rounded-lg p-8 mb-8 shadow-lg backdrop-blur-sm">
+      <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
         { isLoading ? (
           <Spinner />
         ) : (
-          <img src={image} alt="" 
-          className="img-fluid mx-auto d-block" 
-          style={{
-          maxHeight: "300px",
-          filter: showAnswer ? "none" : "brightness(0)",
-          transition: "filter 0.3s ease-in-out"
-        }}/>
+          <img 
+            src={image} 
+            alt="pokemon" 
+            className={`transition-all duration-500 ease-in-out transform ${showAnswer ? 'scale-100' : 'scale-90'}`}
+            style={{
+              filter: showAnswer ? "none" : "brightness(0) saturate(0)",
+              transition: "filter 0.5s ease-in-out"
+            }}
+          />
         )}
       </div>
     </div>
   )
 }
-
 
 export default PokemonDisplay;
