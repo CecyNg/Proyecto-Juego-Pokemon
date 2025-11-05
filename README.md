@@ -8,4 +8,5 @@ Este proyecto es un sencillo juego de "¿Quién es ese Pokémon?"  El objetivo d
 - Vite
 
 #Deploy
-Ver demo: 
+Ver demo: https://cecyng.github.io/Proyecto-Juego-Pokemon/
+Ver codigo: https://github.com/CecyNg/Proyecto-Juego-Pokemon
